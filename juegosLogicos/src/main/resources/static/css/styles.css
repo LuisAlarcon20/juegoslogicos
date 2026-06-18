@@ -1,0 +1,229 @@
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f2f2f2;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Encabezado */
+.header {
+    background-color: #4f79ff;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.header .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu {
+    
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.menu .logo img {
+    width: 80px; /* Ajusta este valor según el tamaño que desees */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+.menu .logo {
+    font-size: 1.2rem; /* Tamaño de texto para el logo si es texto */
+}
+
+.menu-icono {
+    display: none; /* Se muestra solo en dispositivos móviles */
+    cursor: pointer;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 15px;
+    transition: background 0.3s;
+}
+
+.navbar ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+}
+
+/* Diseño móvil */
+@media (max-width: 768px) {
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+    }
+
+    .menu-icono {
+        display: inline-block;
+    }
+
+    input[type="checkbox"]:checked ~ .navbar ul {
+        display: flex;
+    }
+}
+
+/* Contenido principal */
+.header-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.header-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 10px auto 20px;
+    color: #fff;
+}
+
+.btn-1 {
+    padding: 10px 25px;
+    color: #4f79ff;
+    background-color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.btn-1:hover {
+    background-color: #e6e6e6;
+}
+
+/* Sección de juegos */
+.juegos {
+    padding: 40px 0;
+    background-color: #fff;
+}
+
+.juegos-content h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.juegos-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.juegos-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.juegos-1 img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.juegos-2 {
+    width: 40%;
+    height: 40%;
+    max-width: 150px;
+    border-radius: 30px;
+  
+    position: absolute; /* Esto posiciona el logo de manera absoluta */
+    top: 0; /* Coloca el logo en la parte superior */
+    left: 0; /* Coloca el logo a la izquierda */
+}
+
+/* Servicios */
+.services {
+    background-color: #4f79ff;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.services-group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.services-1 {
+    width: 200px;
+}
+
+.services-1 img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.services-1 h3 {
+    margin-top: 10px;
+    font-size: 1.3rem;
+}
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.footer-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.footer-links li a:hover {
+    color: #ccc;
+    text-decoration: underline;
+}
+
+input[type="checkbox"]:checked ~ .navbar ul {
+    display: flex;
+}
+
+html {
+    scroll-behavior: smooth;
+}

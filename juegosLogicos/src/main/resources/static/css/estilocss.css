@@ -1,0 +1,67 @@
+#header2 {
+	margin: auto;
+	width: 267px;
+	font-family: 'Times New Roman', Times, serif;
+	text-align: right; /* Alinear el encabezado a la derecha */
+	position: absolute;
+	right: 33px;
+	top: 145px;
+	height: 72px;
+}
+ul, ol {
+    list-style: none;
+    padding: 0;  /* Eliminar el padding de listas */
+}
+
+.nav {
+    padding: 0;
+    text-align: right; /* Alinear la barra de navegación a la derecha */
+}
+
+.nav li {
+	position: relative;  /* Necesario para los submenús */
+	display: inline-block; /* Esto asegura que los elementos estén en línea */
+	background-color: #D6D6D6;
+	left: auto;
+	top: auto;
+	clip: rect(auto,100%,auto,auto);
+}
+
+.nav li a {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 13px 30px;  /* Corregir los espacios entre valores */
+    display: flex;
+}
+
+.titulo {
+    color: rgb(222, 13, 230);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+.nav li a:hover {
+	background-color: rgb(223, 167, 255);
+}
+
+.nav li ul {
+    display: none;
+    position: absolute;
+    min-width: 140px;
+    background-color: #fff;  /* Añadido color de fondo para el submenú */
+    border: 1px solid #ddd;  /* Añadido borde para el submenú */
+}
+
+.nav li:hover > ul {
+    display: block;
+}
+
+.nav li ul li {
+    position: relative;  /* Cambié 'right' a 'relative' para que los submenús se alineen correctamente */
+}
+
+.nav li ul li ul {
+    right: 0;  /* Cambié el valor de 'right' a 0 para que el sub-submenú aparezca alineado a la derecha */
+    top: 0;
+}

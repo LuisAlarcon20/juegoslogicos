@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Página de Error</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .error-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        .error-container h1 {
+            font-size: 3rem;
+            color: #e74c3c;
+        }
+
+        .error-container p {
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+
+        .error-container a {
+            font-size: 1rem;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .error-container a:hover {
+            text-decoration: underline;
+        }
+
+        .error-container .btn {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .error-container .btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="error-container">
+        <h1>Error 500 - Algo salió mal</h1>
+        <p>Hubo un error inesperado en el servidor. Por favor, intenta nuevamente más tarde.</p>
+        <p>Si el problema persiste, contacta con el soporte.</p>
+        <a href="/home">Volver a la página principal</a>
+        <button class="btn" onclick="window.history.back();">Volver a la página anterior</button>
+    </div>
+
+</body>
+</html>

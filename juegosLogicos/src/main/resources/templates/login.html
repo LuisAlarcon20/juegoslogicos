@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/logincss.css">
+    <title>Iniciar sesión</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="center">
+            <h1>Iniciar sesión</h1>
+            <form action="/login/validate" method="POST">
+                <!-- Correo -->
+                <div class="txt_field">
+                    <input type="email" name="email" required> <!-- Cambié 'username' por 'email' -->
+                    <span></span>
+                    <label>Correo</label>
+                </div>
+
+                <!-- Contraseña -->
+                <div class="txt_field">
+                    <input type="password" name="password" required>
+                    <span></span>
+                    <label>Contraseña</label>
+                </div>
+
+                <!-- Mensaje de error -->
+                <div>
+                    <span th:if="${error}" style="color:red" th:text="${error}"></span>
+                </div>
+
+                <input type="submit" value="Iniciar sesión">
+
+                <div class="signup_link">
+                    No tienes Cuenta? <a href="/crear">Regístrate</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

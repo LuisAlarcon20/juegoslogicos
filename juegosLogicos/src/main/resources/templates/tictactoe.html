@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 en Raya</title>
+    <link rel="stylesheet" href="/css/tictactoe.css">
+    <link rel="stylesheet" href="/css/tictactoe.css" type="text/css"/>
+</head>
+<body>
+    <h1>¡Juega 3 en Raya!</h1>
+
+    <!-- Botón de regreso a la página principal -->
+    <button onclick="window.location.href='/principal'">Regresar</button>
+
+    <div id="game-board">
+        <div class="row">
+            <div class="cell" data-row="0" data-col="0"></div>
+            <div class="cell" data-row="0" data-col="1"></div>
+            <div class="cell" data-row="0" data-col="2"></div>
+        </div>
+        <div class="row">
+            <div class="cell" data-row="1" data-col="0"></div>
+            <div class="cell" data-row="1" data-col="1"></div>
+            <div class="cell" data-row="1" data-col="2"></div>
+        </div>
+        <div class="row">
+            <div class="cell" data-row="2" data-col="0"></div>
+            <div class="cell" data-row="2" data-col="1"></div>
+            <div class="cell" data-row="2" data-col="2"></div>
+        </div>
+    </div>
+
+    <p id="status">Turno del jugador X</p>
+
+    <script>
+        const cells = document.querySelectorAll('.cell');
+        const status = document.getElementById('status');
+
+        cells.forEach(cell => {
+            cell.addEventListener('click', async () => {
+                const row = cell.getAttribute('data-row');
+                const col = cell.getAttribute('data-col');
+
+                const response = await fetch(`/play?row=${row}&col=${col}`);
+                const result = await response.text();
+
+                if (result.includes('gana') || result.includes('empate')) {
+                    alert(result);
+                }
+
+                updateBoard(); // Actualiza todo el tablero
+                status.textContent = result;
+            });
+        });
+
+        async function updateBoard() {
+            const response = await fetch('/board'); // Obtiene todo el tablero
+            const board = await response.json();
+
+            cells.forEach(cell => {
+                const row = cell.getAttribute('data-row');
+                const col = cell.getAttribute('data-col');
+                cell.textContent = board[row][col] === '-' ? '' : board[row][col]; // Muestra 'X', 'O' o vacío
+            });
+        }
+
+        // Carga inicial del tablero
+        updateBoard();
+    </script>
+</body>
+</html>

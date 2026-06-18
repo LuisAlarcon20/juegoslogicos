@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #e0f7fa; /* Fondo suave azul */
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #0277bd; /* Azul oscuro */
+    margin-top: 20px;
+    font-size: 36px;
+}
+
+#game-board {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 20px auto;
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: #ffffff; /* Fondo blanco para el tablero */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.row {
+    display: flex;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #0288d1; /* Azul brillante para el borde */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #b3e5fc; /* Color de fondo azul suave */
+    transition: background-color 0.3s ease;
+    border-radius: 8px; /* Bordes redondeados para las celdas */
+}
+
+.cell:hover {
+    background-color: #81d4fa; /* Azul más oscuro al pasar el ratón */
+}
+
+#status {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #01579b; /* Azul oscuro para el texto */
+}
+
+button {
+    background-color: #0288d1; /* Botón azul */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0277bd; /* Cambio de color al pasar el ratón */
+}
+
+button:focus {
+    outline: none;
+}
